@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>"Mtrade"</title>
+    <title>Ionic</title>
 
     <!-- build:css styles/vendor.css -->
     <!-- <link rel="stylesheet" href="vendor/some.contrib.css"> -->
@@ -17,7 +17,7 @@
     <!-- endbuild -->
   </head>
 
-  <body ng-app="Mtrade">
+  <body ng-app="App">
     <ion-nav-view></ion-nav-view>
 
     <!-- build:js scripts/vendor.js -->
@@ -33,6 +33,8 @@
     <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
     <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+    <script src="bower_components/ngCordova/dist/ng-cordova.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -43,7 +45,10 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/config.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers.js"></script>
+        <script src="scripts//controllers/ads.js"></script>
+        <script src="scripts//controllers/ad.js"></script>
+        <script src="scripts//controllers/new_ad.js"></script>
+        <script src="scripts//controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,36 @@
+<ion-view title="NewAd">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <form ng-submit="save()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Title</span>
+          <input type="text" ng-model="ad.title">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Text</span>
+          <textarea ng-model="ad.text"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Publish Ad</button>
+        </label>
+      </div>
+    </form>
+    <div class="card">
+      <div class="item item-divider">
+        Take a picture
+      </div>
+      <div class="item item-image">
+        <img class="item" ng-src="{{cameraimage}}" style="height: 350px;"/>
+      </div>
+    </div>
+
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="takePicture()">
+        Take Photo
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

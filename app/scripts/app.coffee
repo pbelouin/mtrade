@@ -1,58 +1,51 @@
 'use strict'
 
-# Ionic Starter App, v0.9.20
-
-# angular.module is a global place for creating, registering and retrieving Angular modules
-# 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-# the 2nd parameter is an array of 'requires'
-# 'starter.services' is found in services.js
-# 'starter.controllers' is found in controllers.js
-
-# Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-# for form inputs)
-
-# org.apache.cordova.statusbar required
-angular.module('Mtrade', [
+angular.module('App', [
   'ionic'
   'config'
-  'Mtrade.controllers'
+  'firebase'
+  'ngCordova'
 ]).run(($ionicPlatform) ->
+
   $ionicPlatform.ready ->
     cordova.plugins.Keyboard.hideKeyboardAccessoryBar true  if window.cordova and window.cordova.plugins.Keyboard
     StatusBar.styleDefault()  if window.StatusBar
-    return
 
-  return
 ).config ($stateProvider, $urlRouterProvider) ->
-  $stateProvider.state('app',
-    url: '/app'
+  $stateProvider.state('root',
+    url: ''
     abstract: true
     templateUrl: 'templates/menu.html'
     controller: 'AppCtrl'
-  ).state('app.search',
+  ).state('root.search',
     url: '/search'
     views:
       menuContent:
         templateUrl: 'templates/search.html'
-  ).state('app.browse',
+  ).state('root.browse',
     url: '/browse'
     views:
       menuContent:
         templateUrl: 'templates/browse.html'
-  ).state('app.playlists',
-    url: '/playlists'
+  ).state('root.ads',
+    url: '/ads'
     views:
       menuContent:
-        templateUrl: 'templates/playlists.html'
-        controller: 'PlaylistsCtrl'
-  ).state 'app.single',
-    url: '/playlists/:playlistId'
+        templateUrl: 'templates/ads.html'
+        controller: 'AdsCtrl'
+  ).state('root.single',
+    url: '/ads/:adKey'
     views:
       menuContent:
-        templateUrl: 'templates/playlist.html'
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/ad.html'
+        controller: 'AdCtrl'
+  ).state 'root.new_ad',
+    url: '/new_ad'
+    views:
+      menuContent:
+        templateUrl: 'templates/new_ad.html'
+        controller: 'NewAdCtrl'
 
   
   # if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise '/app/playlists'
-  return
+  $urlRouterProvider.otherwise '/ads'
