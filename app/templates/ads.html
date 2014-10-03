@@ -5,6 +5,9 @@
   <ion-content class="has-header">
     <ion-list>
       <ion-item class="item-icon-right" ng-repeat="ad in ads" href="#/ads/{{ads.$keyAt(ad)}}">
+        <div class="item item-image">
+          <img class="item" ng-src="{{ad.picture}}" style="height: 150px;"/>
+        </div>
         {{ad.title}}
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>

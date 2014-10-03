@@ -15,6 +15,7 @@ angular.module('App')
       ref.push
         title: $scope.ad.title
         text: $scope.ad.text
+        picture: $scope.cameraImage
       $state.go('root.ads')
     
     $scope.takePicture = ->
@@ -25,6 +26,6 @@ angular.module('App')
 
       # udpate camera image directive
       $cordovaCamera.getPicture(options).then ((imageData) ->
-        $scope.cameraimage = "data:image/jpeg;base64," + imageData
+        $scope.cameraImage = "data:image/jpeg;base64," + imageData
       ), (err) ->
         console.log "Failed because: " + message

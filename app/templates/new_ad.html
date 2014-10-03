@@ -3,6 +3,22 @@
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content>
+    
+    <div class="card">
+      <div class="item item-divider">
+        Take a picture
+      </div>
+      <div class="item item-image">
+        <img class="item" ng-src="{{cameraImage}}" style="height: 350px;"/>
+      </div>
+    </div>
+
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="takePicture()">
+        Take Photo
+      </button>
+    </div>
+    
     <form ng-submit="save()">
       <div class="list">
         <label class="item item-input">
@@ -14,23 +30,10 @@
           <textarea ng-model="ad.text"></textarea>
         </label>
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Publish Ad</button>
+          <button class="button button-block button-positive" ng-disabled="{{!!cameraImage}}" type="submit">Publish Ad</button>
         </label>
       </div>
     </form>
-    <div class="card">
-      <div class="item item-divider">
-        Take a picture
-      </div>
-      <div class="item item-image">
-        <img class="item" ng-src="{{cameraimage}}" style="height: 350px;"/>
-      </div>
-    </div>
 
-    <div class="padding">
-      <button class="button button-block button-positive" ng-click="takePicture()">
-        Take Photo
-      </button>
-    </div>
   </ion-content>
 </ion-view>
