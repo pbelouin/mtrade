@@ -21,6 +21,8 @@ angular.module('App')
     $scope.takePicture = ->
       options =
         quality: 50
+        targetWidth: 350
+        targetHeight: 350
         destinationType: Camera.DestinationType.DATA_URL
         sourceType: Camera.PictureSourceType.CAMERA
 

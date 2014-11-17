@@ -3,14 +3,22 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <ion-list>
-      <ion-item class="item-icon-right" ng-repeat="ad in ads" href="#/ads/{{ads.$keyAt(ad)}}">
-        <div class="item item-image">
-          <img class="item" ng-src="{{ad.picture}}" style="height: 150px;"/>
-        </div>
-        {{ad.title}}
-        <i class="icon ion-chevron-right icon-accessory"></i>
-      </ion-item>
-    </ion-list>
+    <div id="search-bar">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper" id="search-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search" ng-model="query" ng-change="search()">
+        </label>
+      </div>
+    </div>
+    <div class="list">
+      <a ng-repeat="ad in ads | filter:query | orderBy: 'title' " 
+        href="#/ads/{{ads.$keyAt(ad)}}"
+        class="item item-thumbnail-left">
+        <img ng-src="{{ ad.picture }}">
+        <h2>{{ ad.title }}</h2>
+        <h4>{{ ad.text }}</h4>
+      </a>
+    </div>
   </ion-content>
 </ion-view>

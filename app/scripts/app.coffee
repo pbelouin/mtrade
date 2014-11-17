@@ -17,11 +17,6 @@ angular.module('App', [
     abstract: true
     templateUrl: 'templates/menu.html'
     controller: 'AppCtrl'
-  ).state('root.search',
-    url: '/search'
-    views:
-      menuContent:
-        templateUrl: 'templates/search.html'
   ).state('root.browse',
     url: '/browse'
     views:
